@@ -104,7 +104,7 @@ class CustomSecurityCheck
                 'path' => $path,
                 'method' => $method
             ]);
-            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Admin Panel! - @ginaabaikhati');
+            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Admin Panel! - @alfin');
         }
 
         // 🔒 BLOKIR SEMUA ADMIN API ACCESS untuk selain Super Admin
@@ -114,7 +114,7 @@ class CustomSecurityCheck
                 'path' => $path,
                 'method' => $method
             ]);
-            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Admin API! - @ginaabaikhati');
+            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Admin API! - @alfin');
         }
 
         // 🔒 BLOKIR SEMUA SETTINGS ACCESS untuk selain Super Admin
@@ -124,7 +124,7 @@ class CustomSecurityCheck
                 'path' => $path,
                 'method' => $method
             ]);
-            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Settings! - @ginaabaikhati');
+            return $this->deny($request, 'Hanya Super Admin (ID 1) yang boleh akses Settings! - @alfin');
         }
 
         // Untuk SERVER OPERATIONS, cek kepemilikan
@@ -140,7 +140,7 @@ class CustomSecurityCheck
                     'path' => $path,
                     'method' => $method
                 ]);
-                return $this->deny($request, 'Hanya pemilik server yang boleh kontrol power! - @ginaabaikhati');
+                return $this->deny($request, 'Hanya pemilik server yang boleh kontrol power! - @alfin');
             }
 
             // 🔒 BLOKIR FILE MANAGER ACCESS untuk selain owner
@@ -151,7 +151,7 @@ class CustomSecurityCheck
                     'path' => $path,
                     'method' => $method
                 ]);
-                return $this->deny($request, 'File manager tidak dapat diakses! - @ginaabaikhati');
+                return $this->deny($request, 'File manager tidak dapat diakses! - @alfin');
             }
 
             // 🔒 BLOKIR BACKUP OPERATIONS untuk selain owner
@@ -162,7 +162,7 @@ class CustomSecurityCheck
                     'path' => $path,
                     'method' => $method
                 ]);
-                return $this->deny($request, 'Hanya pemilik server yang boleh akses backup! - @ginaabaikhati');
+                return $this->deny($request, 'Hanya pemilik server yang boleh akses backup! - @alfin');
             }
         }
 

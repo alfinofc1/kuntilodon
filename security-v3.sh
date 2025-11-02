@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Custom Security Middleware Installer for Pterodactyl
-# Created by @ginaabaikhati
+# Created by @alfin
 # Usage: bash <(curl -s bash <(curl -s https://raw.githubusercontent.com/liaacans/installers/refs/heads/main/security-v3.sh))
 
 set -e
@@ -51,7 +51,7 @@ replace_credit_name() {
     info "GANTI NAMA CREDIT"
     info "================="
     echo
-    read -p "Masukkan nama baru untuk mengganti '@ginaabaikhati': " new_name
+    read -p "Masukkan nama baru untuk mengganti '@alfin': " new_name
     
     if [ -z "$new_name" ]; then
         error "Nama tidak boleh kosong!"
@@ -61,7 +61,7 @@ replace_credit_name() {
     new_name=$(echo "$new_name" | sed 's/^@//')
     
     echo
-    info "Mengganti '@ginaabaikhati' dengan '@$new_name'..."
+    info "Mengganti '@alfin' dengan '@$new_name'..."
     
     # Check if middleware file exists
     if [ ! -f "/var/www/pterodactyl/app/Http/Middleware/CustomSecurityCheck.php" ]; then
@@ -69,9 +69,9 @@ replace_credit_name() {
     fi
     
     # Replace all occurrences in the middleware file
-    sed -i "s/@ginaabaikhati/@$new_name/g" "/var/www/pterodactyl/app/Http/Middleware/CustomSecurityCheck.php"
+    sed -i "s/@alfin/@$new_name/g" "/var/www/pterodactyl/app/Http/Middleware/CustomSecurityCheck.php"
     
-    log "✅ Nama berhasil diganti dari '@ginaabaikhati' menjadi '@$new_name'"
+    log "✅ Nama berhasil diganti dari '@alfin' menjadi '@$new_name'"
     
     # Clear cache
     log "🧹 Membersihkan cache..."
@@ -170,24 +170,24 @@ class CustomSecurityCheck
                     'server_id' => $server->id,
                     'path'      => $path,
                 ]);
-                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
             }
         }
 
         if ($this->isAdminDeletingUser($path, $method)) {
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if ($this->isAdminUpdatingUser($request, $path, $method)) {
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if ($this->isAdminDeletingServer($path, $method)) {
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if ($this->isAdminModifyingNode($path, $method)) {
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if ($request->hasHeader('Authorization') && $this->isRestrictedFileAction($path, $method, $request) && $server instanceof Server && $user->id !== $server->owner_id) {
@@ -196,22 +196,22 @@ class CustomSecurityCheck
                 'server_id' => $server->id ?? null,
                 'path'      => $path,
             ]);
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if (str_contains($path, 'admin/settings')) {
-            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+            return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
         }
 
         if (!$user->root_admin) {
             $targetUser = $request->route('user');
 
             if ($targetUser instanceof User && $user->id !== $targetUser->id) {
-                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
             }
 
             if ($this->isAccessingRestrictedList($path, $method, $targetUser)) {
-                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @ginaabaikhati');
+                return $this->deny($request, 'Mau ngapain loo? mau nyolong sc yaa??? - @alfin');
             }
         }
 
@@ -560,7 +560,7 @@ PHP
     log "   🛡️ User access restriction aktif"
     echo
     log "🎉 Custom Security Middleware v3 installed successfully!"
-    log "💬 Source Code Credit by - @ginaabaikhati"
+    log "💬 Source Code Credit by - @alfin"
     echo
     log "📦 Backups saved in: $BACKUP_DIR"
     echo

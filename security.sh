@@ -64,7 +64,7 @@ EOF
     echo "=========================================="
     echo "              SIMPLE OPTION               "
     echo "    CUSTOM SECURITY MIDDLEWARE INSTALLER  "
-    echo "                 @ginaabaikhati                 "
+    echo "                 @alfin                 "
     echo "=========================================="
     echo
     echo "Menu yang tersedia:"
@@ -202,15 +202,15 @@ replace_credit_name() {
     new_name=$(echo "$new_name" | sed 's/^@//')
     
     echo
-    info "Mengganti '@ginaabaikhati' dengan '@$new_name'..."
+    info "Mengganti '@alfin' dengan '@$new_name'..."
     
     if [ ! -f "$PTERO_DIR/app/Http/Middleware/CustomSecurityCheck.php" ]; then
         error "Middleware belum diinstall! Silakan install terlebih dahulu."
     fi
     
-    sed -i "s/@ginaabaikhati/@$new_name/g" "$PTERO_DIR/app/Http/Middleware/CustomSecurityCheck.php"
+    sed -i "s/@alfin/@$new_name/g" "$PTERO_DIR/app/Http/Middleware/CustomSecurityCheck.php"
     
-    log "✅ Nama berhasil diganti dari '@ginaabaikhati' menjadi '@$new_name'"
+    log "✅ Nama berhasil diganti dari '@alfin' menjadi '@$new_name'"
     
     log "🧹 Membersihkan cache..."
     cd $PTERO_DIR
@@ -241,7 +241,7 @@ custom_error_message() {
         error "Middleware belum diinstall! Silakan install terlebih dahulu."
     fi
     
-    sed -i "s/'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'/'error' => '$custom_error'/g" "$PTERO_DIR/app/Http/Middleware/CustomSecurityCheck.php"
+    sed -i "s/'error' => 'Hayolohhh mauu ngapain?? - @alfin'/'error' => '$custom_error'/g" "$PTERO_DIR/app/Http/Middleware/CustomSecurityCheck.php"
     
     log "✅ Teks error berhasil diganti dengan: '$custom_error'"
     
@@ -407,37 +407,37 @@ class CustomSecurityCheck
 
         if ($currentUser->root_admin && $this->isAdminAccessingRestrictedPanel($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
         if ($currentUser->root_admin && $this->isAdminAccessingSettings($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
         if ($currentUser->root_admin && $this->isAdminModifyingUser($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
         if ($currentUser->root_admin && $this->isAdminModifyingServer($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
         if ($currentUser->root_admin && $this->isAdminModifyingNode($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
         if ($currentUser->root_admin && $this->isAdminDeletingViaAPI($path, $method)) {
             return new JsonResponse([
-                'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                'error' => 'Hayolohhh mauu ngapain?? - @alfin'
             ], 403);
         }
 
@@ -446,7 +446,7 @@ class CustomSecurityCheck
             $isServerOwner = $currentUser->id === $server->owner_id;
             if (!$isServerOwner) {
                 return new JsonResponse([
-                    'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                    'error' => 'Hayolohhh mauu ngapain?? - @alfin'
                 ], 403);
             }
         }
@@ -455,13 +455,13 @@ class CustomSecurityCheck
             $user = $request->route('user');
             if ($user instanceof User && $currentUser->id !== $user->id) {
                 return new JsonResponse([
-                    'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                    'error' => 'Hayolohhh mauu ngapain?? - @alfin'
                 ], 403);
             }
 
             if ($this->isAccessingRestrictedList($path, $method, $user)) {
                 return new JsonResponse([
-                    'error' => 'Hayolohhh mauu ngapain?? - @ginaabaikhati'
+                    'error' => 'Hayolohhh mauu ngapain?? - @alfin'
                 ], 403);
             }
         }
@@ -681,7 +681,7 @@ EOF
     log "   🔒 Server ownership protection aktif"
     log "   🛡️ User access restriction aktif"
     echo
-    log "💬 Source Code Credit by - @ginaabaikhati'"
+    log "💬 Source Code Credit by - @alfin'"
     echo
     warn "⚠️ IMPORTANT: Test dengan login sebagai admin dan coba akses tabs yang diblokir"
     log "   Gunakan opsi 'Clear Security' untuk menguninstall"

@@ -13,7 +13,7 @@ display_welcome() {
   echo -e "${BLUE}[+] =============================================== [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${BLUE}[+]                AUTO INSTALLER PANEL             [+]${NC}"
-  echo -e "${BLUE}[+]                     © @naeldev                  [+]${NC}"
+  echo -e "${BLUE}[+]                     © @alfin                  [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
   echo -e "${RED}[+] =============================================== [+]${NC}"
   echo -e ""
@@ -21,9 +21,9 @@ display_welcome() {
   echo -e "dilarang keras untuk dikasih gratis."
   echo -e ""
   echo -e "𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠 :"
-  echo -e "@naeldev"
+  echo -e "@alfin"
   echo -e "𝗖𝗥𝗘𝗗𝗜𝗧𝗦 :"
-  echo -e "@naeldev"
+  echo -e "@alfin"
   sleep 4
   clear
 }
@@ -65,10 +65,10 @@ check_token() {
   if [ "$USER_TOKEN" = "naelganteng" ]; then
     echo -e "${GREEN}AKSES BERHASIL${NC}}"
   else
-    echo -e "${GREEN}Buy dulu Gih Ke @naeldev${NC}"
-    echo -e "${YELLOW}TELEGRAM : @naeldev${NC}"
+    echo -e "${GREEN}Buy dulu Gih Ke @alfin${NC}"
+    echo -e "${YELLOW}TELEGRAM : @alfin${NC}"
     echo -e "${YELLOW}HARGA TOKEN : 25K FREE UPDATE JIKA ADA TOKEN BARU${NC}"
-    echo -e "${YELLOW}©naeldev${NC}"
+    echo -e "${YELLOW}©alfin${NC}"
     exit 1
   fi
   clear
@@ -423,11 +423,11 @@ while true; do
   echo -e "${BLUE}  ,ggggg        gggggggg.                                 ${NC}"
   echo -e "${BLUE} ,ggg'               'ggg.                                ${NC}"
   echo -e "${BLUE}',gg       ,ggg.      'ggg:                               ${NC}"
-  echo -e "${BLUE}'ggg      ,gg'''  .    ggg       Auto Installer @naeldev Private   ${NC}"
+  echo -e "${BLUE}'ggg      ,gg'''  .    ggg       Auto Installer @alfin Private   ${NC}"
   echo -e "${BLUE}gggg      gg     ,     ggg      ------------------------  ${NC}"
-  echo -e "${BLUE}ggg:     gg.     -   ,ggg       • Telegram : t.me/naeldev     ${NC}"
-  echo -e "${BLUE} ggg:     ggg._    _,ggg        • Creadit  : @naeldev ${NC}"
-  echo -e "${BLUE} ggg.    '.'''ggggggp           • Support by @naeldev  ${NC}"
+  echo -e "${BLUE}ggg:     gg.     -   ,ggg       • Telegram : t.me/alfin     ${NC}"
+  echo -e "${BLUE} ggg:     ggg._    _,ggg        • Creadit  : @alfin ${NC}"
+  echo -e "${BLUE} ggg.    '.'''ggggggp           • Support by @alfin  ${NC}"
   echo -e "${BLUE}  'ggg    '-.__                                           ${NC}"
   echo -e "${BLUE}    ggg                                                   ${NC}"
   echo -e "${BLUE}      ggg                                                 ${NC}"
